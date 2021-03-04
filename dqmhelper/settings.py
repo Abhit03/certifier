@@ -22,15 +22,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-<<<<<<< Updated upstream
+
 SECRET_KEY = config('DJANGO_SECRET_KEY',default='')
 DJANGO_SECRET_ACC = config('DJANGO_SECRET_ACC',default='admin')
-DJANGO_SECRET_PASS = config('DJANGO_SECRET_PASS',default='admin')
-=======
-SECRET_KEY = config('DJANGO_SECRET_KEY', default='')
-DJANGO_SECRET_ACC = config('DJANGO_SECRET_ACC', default='admin')
 DJANGO_SECRET_PASS = config('DJANGO_SECRET_PASS', default='admin')
->>>>>>> Stashed changes
+
 
 # Redis Server Hostname
 REDIS_HOST = config('REDIS_HOST', default='localhost')
