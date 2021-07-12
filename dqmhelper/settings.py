@@ -44,6 +44,8 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'channels',
+    "cablingmap.apps.CablingmapConfig",
+    "mlplayground.apps.MlplaygroundConfig",
     "mldatasets.apps.MldatasetsConfig",
     "trackermaps.apps.TrackermapsConfig",
     "openruns.apps.OpenrunsConfig",
@@ -59,7 +61,6 @@ INSTALLED_APPS = [
     "users.apps.UsersConfig",
     "dqmgui.apps.DqmguiConfig",
     "plot.apps.PlotConfig",
-    "analysis.apps.AnalysisConfig",
     "home.apps.HomeConfig",
     "certifier.apps.CertifierConfig",
     "oms.apps.OmsConfig",
@@ -196,3 +197,6 @@ EMAIL_USE_TLS = config('DJANGO_EMAIL_USE_TLS', default=False, cast=bool)
 SERVER_EMAIL = config('DJANGO_SERVER_EMAIL', default='root@localhost')
 
 CERN_CERTIFICATE_PATH = config('CERN_CERTIFICATE_PATH', default='')
+
+# When Upgraded to Django 3.2 - RELEASE 06.04.2021
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

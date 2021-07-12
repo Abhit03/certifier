@@ -108,7 +108,13 @@ class TrackerCertificationTable(SimpleTrackerCertificationTable):
     edit_run = tables.TemplateColumn(
         '<div align="center">'
             '<a href="{% url \'listruns:update\' pk=record.pk run_number=record.runreconstruction.run.run_number reco=record.runreconstruction.reconstruction%}">'
+            '{% if user == record.user %}'
+                '<button class="btn btn-block btn-danger" id="id_certificaion_update">'
+            '{% else %}'
+                '<button class="btn btn-block btn-danger" id="id_certificaion_update" disabled>'
+            '{% endif %}'
                 'Edit'
+                '</button>'
             '</a>'
         '</div>',
         orderable=False,
@@ -217,7 +223,7 @@ class OpenRunsTable(tables.Table):
     delete = tables.TemplateColumn(
         '<div align="center">'
             '<a href="{% url \'delete:delete_open_run\' run_number=record.run_number %}">'
-            '{% if user == record.user %}'
+            '{% if user == record.user or user.has_shift_leader_rights %}'
                 '<button class="btn btn-block btn-danger" id="id_openruns_delete">'
             '{% else %}'
                 '<button class="btn btn-block btn-danger" id="id_openruns_delete" disabled>'

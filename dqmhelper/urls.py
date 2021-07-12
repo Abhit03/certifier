@@ -27,11 +27,12 @@ urlpatterns = [
     path("shiftleader/", include('shiftleader.urls')),
     path("list/", include("listruns.urls")),
     path("certify/", include("certifier.urls")),
-    path("analyse/", include("analysis.urls")),
     path("plot/", include("plot.urls")),
     path("accounts/", include('allauth.urls')),
     path("users/", include('users.urls')),
     path("reference/", include('addrefrun.urls')),
     path("admin/", admin.site.urls),
-    path("mldatasets/", include('mldatasets.urls'))
+    path("mldatasets/", include('mldatasets.urls')),
+    path("mlplayground/", include('mlplayground.urls', namespace = 'mlplayground')),
+    path("cablingmap/", include('cablingmap.urls')),
 ]
